@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const add = (a, b) => a + b;
+      const substract = (a, b) => a - b;
+      const double = (a) => a * 2;
+
+      // cu multa inspiratie de pe net....
+      function chain2(items) {
+        for (let key in items) {
+          let chainedFunction = (...inputs) => {
+            if (this.result != null) {
+              inputs.splice(0, 0, this.result);
+            }
+            let cloneChainedFunction = new chain(items);
+            cloneChainedFunction.result = items[key].apply(this, inputs);
+            return cloneChainedFunction;
+          };
+          Object.defineProperty(this, key, { value: chainedFunction });
+        }
+
+        Object.defineProperty(this, "execute", {
+          value: () => {
+            return this.result;
+          },
+        });
+        return this;
+      }
+
+      // cu mai putina insiratie de pe net... dar crapa
+      function chain1(items) {
+        result = 0;
+
+        Object.keys(items).map(function (key, index) {
+          let chainedFunction = (...inputs) => {
+            if (this.result != null) {
+              inputs.splice(0, 0, this.result);
+            }
+            this.result = items[key].apply(result, inputs);
+            return this;
+          };
+
+          Object.defineProperty(this, key, { value: chainedFunction });
+        });
+
+        this.execute = () => {
+          console.log("execute result:", result);
+          result = 0;
+          return this;
+        };
+
+        return this;
+      }
+
+      // fara inspiratie.. dar o rezolvare simpla
+      function chain(items) {
+        result = 0;
+
+        this.add = (a, b = result) => {
+          result = items.add(a, b);
+          return this;
+        };
+
+        this.substract = (a, b = result) => {
+          result = b === result ? items.substract(b, a) : items.substract(a, b);
+          return this;
+        };
+
+        this.double = (a = result) => {
+          result = a * 2;
+          return this;
+        };
+
+        this.execute = () => {
+          console.log("execute result:", result);
+          result = 0;
+          return this;
+        };
+
+        return this;
+      }
+
+      const c = chain({ add, substract, double });
+
+      console.log(c.add(5, 3).double().substract(10).execute()); // 6
+      console.log(c.substract(10, 5).double().double().add(22).execute()); // 42
+    </script>
+  </body>
+</html>
