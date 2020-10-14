@@ -1,8 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "../logo.svg";
+import User from "../components/User";
 
-function App() {
+function Homepage() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <User developerName="Daniel" color="red" image={logo} />
     </div>
   );
 }
 
-export default App;
+export default Homepage;
