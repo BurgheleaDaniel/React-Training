@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import ViewCourse from "./ViewCourse";
 import styles from "./Course.module.css";
 
@@ -41,14 +40,6 @@ const HomeworkDay3 = () => {
       </div>
     </div>
   );
-};
-
-HomeworkDay3.propTypes = {
-  options: PropTypes.array,
-};
-
-HomeworkDay3.defaultProps = {
-  options: [],
 };
 
 export default HomeworkDay3;

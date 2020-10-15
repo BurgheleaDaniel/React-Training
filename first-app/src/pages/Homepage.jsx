@@ -1,25 +1,25 @@
 import React from "react";
 import logo from "../logo.svg";
 import User from "../components/User";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 
 function Homepage() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <User developerName="Daniel" color="red" image={logo} />
+      <List>
+        <ListItem>
+          <a className="App-link" href="/homeworkDay3">
+            Homework Day 3
+          </a>
+        </ListItem>
+        <ListItem>
+          <a className="App-link" href="/homeworkDay4">
+            Homework Day 4
+          </a>
+        </ListItem>
+        <User developerName="Daniel" color="red" image={logo} />
+      </List>
     </div>
   );
 }
