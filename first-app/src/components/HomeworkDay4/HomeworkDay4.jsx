@@ -1,10 +1,8 @@
 import React from "react";
-import DropDown from "./DropDown";
+import DropDownManager from "./DropDownManager";
 
 const HomeworkDay4 = () => {
-  return (
-    <DropDown options={["Option 1", "Option 2", "Option 3", "Option 4"]} />
-  );
+  return <DropDownManager />;
 };
 
 export default HomeworkDay4;

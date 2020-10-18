@@ -5,7 +5,7 @@ const User = ({ developerName, color, image }) => {
   return (
     <>
       <p style={{ backgroundColor: color }}>Hello {developerName}</p>
-      <img src={image} width="50" height="50" />
+      <img alt="User" src={image} width="50" height="50" />
     </>
   );
 };
