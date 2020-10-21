@@ -1,8 +1,8 @@
-import React from "react";
-import logo from "../logo.svg";
-import User from "../components/User";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import React from "react"
+import logo from "../logo.svg"
+import User from "../components/User"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 
 function Homepage() {
   return (
@@ -18,10 +18,15 @@ function Homepage() {
             Homework Day 4
           </a>
         </ListItem>
+        <ListItem>
+          <a className="App-link" href="/homeworkDay5">
+            Homework Day 5
+          </a>
+        </ListItem>
         <User developerName="Daniel" color="red" image={logo} />
       </List>
     </div>
-  );
+  )
 }
 
-export default Homepage;
+export default Homepage

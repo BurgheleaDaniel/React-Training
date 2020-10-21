@@ -1,10 +1,10 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import HomeworkDay3 from "./components/HomeworkDay3/HomeworkDay3";
-import HomeworkDay4 from "./components/HomeworkDay4/HomeworkDay4";
-import Day5 from "./components/Day5/Day5";
+import React from "react"
+import "./App.css"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Homepage from "./pages/Homepage"
+import HomeworkDay3 from "./components/HomeworkDay3/HomeworkDay3"
+import HomeworkDay4 from "./components/HomeworkDay4/HomeworkDay4"
+import HomeworkDay5 from "./components/HomeworkDay5/HomeworkDay5"
 
 function App() {
   return (
@@ -12,11 +12,11 @@ function App() {
       <Switch>
         <Route path="/homeworkDay3" component={HomeworkDay3} />
         <Route path="/homeworkDay4" component={HomeworkDay4} />
-        <Route path="/Day5" component={Day5} />
+        <Route path="/HomeworkDay5" component={HomeworkDay5} />
         <Route path="/" component={Homepage} />
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
