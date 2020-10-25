@@ -1,0 +1,28 @@
+.wrapper {
+  background-color: #418ef1;
+}
+
+.form {
+  background-color: #fff;
+  width: 500px;
+  margin: 0 auto;
+  padding: 5px 20px;
+}
+
+.fieldset {
+  /* margin: 20px 0; */
+  border-style: unset;
+}
+
+.input {
+  /* margin: 20px 0; */
+  width: 90%;
+}
+
+.error {
+  border: solid 1px red;
+}
+
+.errorMessage {
+  color: red;
+}
