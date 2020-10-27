@@ -1,5 +1,13 @@
-import React, { useState, useReducer } from "react"
+import React, { useState, useReducer, useEffect } from "react"
+import TextField from "@material-ui/core/TextField"
 import styles from "./HomeworkDay6.module.css"
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  MenuItem,
+  Select,
+} from "@material-ui/core"
 
 const initialState = {
   firstName: "",
@@ -27,6 +35,12 @@ const HomeworkDay6 = () => {
       name: "reset",
     })
   }
+
+  useEffect(() => {
+    if (errors.length > 0) {
+      isFormValid()
+    }
+  }, [formState])
 
   const isFormValid = () => {
     const err = []
@@ -64,7 +78,6 @@ const HomeworkDay6 = () => {
   }
 
   const { firstName, lastName, email, password, country, terms } = formState
-  console.log(errors.includes("firstName"))
 
   return (
     <div className={styles.wrapper}>
@@ -74,17 +87,17 @@ const HomeworkDay6 = () => {
         <fieldset className={styles.fieldset}>
           <label htmlFor="firstName">
             <p>First Name</p>
-            <input
+            <TextField
               id="firstName"
               name="firstName"
-              data-testid="firstName"
+              variant="outlined"
               value={firstName}
               onChange={handleInputChange}
-              className={
-                errors.includes("firstName")
-                  ? `${styles.input} ${styles.error}`
-                  : `${styles.input}`
-              }
+              error={errors.includes("firstName") ? true : false}
+              className={styles.input}
+              inputProps={{
+                "data-testid": "firstName",
+              }}
             />
             {errors.includes("firstName") && (
               <p className={`${styles.errorMessage}`}>This Field is required</p>
@@ -95,17 +108,17 @@ const HomeworkDay6 = () => {
         <fieldset className={styles.fieldset}>
           <label htmlFor="lastName">
             <p>Last Name</p>
-            <input
+            <TextField
               id="lastName"
               name="lastName"
-              data-testid="lastName"
+              variant="outlined"
               value={lastName}
               onChange={handleInputChange}
-              className={
-                errors.includes("lastName")
-                  ? `${styles.input} ${styles.error}`
-                  : `${styles.input}`
-              }
+              error={errors.includes("lastName") ? true : false}
+              className={styles.input}
+              inputProps={{
+                "data-testid": "lastName",
+              }}
             />
             {errors.includes("lastName") && (
               <p className={`${styles.errorMessage}`}>This Field is required</p>
@@ -116,18 +129,18 @@ const HomeworkDay6 = () => {
         <fieldset className={styles.fieldset}>
           <label htmlFor="email">
             <p>Email</p>
-            <input
+            <TextField
               id="email"
               name="email"
               type="email"
-              data-testid="email"
+              variant="outlined"
               value={email}
               onChange={handleInputChange}
-              className={
-                errors.includes("email")
-                  ? `${styles.input} ${styles.error}`
-                  : `${styles.input}`
-              }
+              error={errors.includes("email") ? true : false}
+              className={styles.input}
+              inputProps={{
+                "data-testid": "email",
+              }}
             />
             {errors.includes("email") && (
               <p className={`${styles.errorMessage}`}>This Field is required</p>
@@ -138,18 +151,18 @@ const HomeworkDay6 = () => {
         <fieldset className={styles.fieldset}>
           <label htmlFor="password">
             <p>Password</p>
-            <input
+            <TextField
               id="password"
               name="password"
               type="password"
-              data-testid="password"
+              variant="outlined"
               value={password}
               onChange={handleInputChange}
-              className={
-                errors.includes("password")
-                  ? `${styles.input} ${styles.error}`
-                  : `${styles.input}`
-              }
+              error={errors.includes("password") ? true : false}
+              className={styles.input}
+              inputProps={{
+                "data-testid": "password",
+              }}
             />
             {errors.includes("password") && (
               <p className={`${styles.errorMessage}`}>This Field is required</p>
@@ -160,25 +173,26 @@ const HomeworkDay6 = () => {
         <fieldset className={styles.fieldset}>
           <label htmlFor="country">
             <p>Country</p>
-            <select
+            <Select
               id="country"
               name="country"
-              data-testid="country"
+              variant="outlined"
               value={country}
               onChange={handleInputChange}
-              className={
-                errors.includes("country")
-                  ? `${styles.input} ${styles.error}`
-                  : `${styles.input}`
-              }
+              label="Country"
+              className={styles.input}
+              inputProps={{
+                "data-testid": "country",
+              }}
             >
-              <option value="">Select a type</option>
-              <option value="RO">RO</option>
-              <option value="ES">ES</option>
-              <option value="AU">AU</option>
-              <option value="UK">UK</option>
-            </select>
-
+              <MenuItem value="">
+                <em>Select a Country</em>
+              </MenuItem>
+              <MenuItem value="RO">RO</MenuItem>
+              <MenuItem value="ES">ES</MenuItem>
+              <MenuItem value="AU">AU</MenuItem>
+              <MenuItem value="UK">UK</MenuItem>
+            </Select>
             {errors.includes("country") && (
               <p className={`${styles.errorMessage}`}>This Field is required</p>
             )}
@@ -187,35 +201,35 @@ const HomeworkDay6 = () => {
 
         <fieldset className={styles.fieldset}>
           <label htmlFor="terms">
-            <p>I accept the terms of the service Wrap</p>
-            <input
-              id="terms"
-              name="terms"
-              data-testid="terms"
-              type="checkbox"
-              checked={terms}
-              onChange={handleInputChange}
-              className={
-                errors.includes("terms")
-                  ? `${styles.input} ${styles.error}`
-                  : `${styles.input}`
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={terms}
+                  onChange={handleInputChange}
+                  id="terms"
+                  name="terms"
+                  data-testid="terms"
+                  color="primary"
+                />
               }
+              label="I accept the terms of the service Wrap"
             />
-
             {errors.includes("terms") && (
               <p className={`${styles.errorMessage}`}>This Field is required</p>
             )}
           </label>
         </fieldset>
 
-        <button
+        <Button
           type="submit"
           data-testid="submitButton"
+          variant="contained"
+          color="primary"
           disabled={isFormSubmiting || errors.length > 0}
           className={styles.input}
         >
           Submit
-        </button>
+        </Button>
       </form>
     </div>
   )
