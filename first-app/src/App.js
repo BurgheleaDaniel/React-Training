@@ -7,6 +7,7 @@ import HomeworkDay4 from "./components/HomeworkDay4/HomeworkDay4"
 import HomeworkDay5 from "./components/HomeworkDay5/HomeworkDay5"
 import Day6 from "./components/Day6/Day6"
 import HomeworkDay6 from "./components/HomeworkDay6/HomeworkDay6"
+import DashBoard from "./components/HomeworkDay8/DashBoard"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/homeworkDay4" component={HomeworkDay4} />
         <Route path="/HomeworkDay5" component={HomeworkDay5} />
         <Route path="/HomeworkDay6" component={HomeworkDay6} />
+        <Route path="/HomeworkDay8" component={DashBoard} />
         <Route path="/Day6" component={Day6} />
         <Route path="/" component={Homepage} />
       </Switch>
