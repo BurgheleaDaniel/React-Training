@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import Typography from "@material-ui/core/Typography"
 import TopBar from "./components/TopBar"
 import LeftMenu from "./components/LeftMenu"
 import Campain from "./components/campain/Campain"
