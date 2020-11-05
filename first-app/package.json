@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.12.1"
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "mutation-observer": "^1.0.3"
   }
 }

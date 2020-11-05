@@ -4,6 +4,8 @@ import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import { styled } from "@material-ui/core/styles"
 import { colors } from "../theme"
+import { Link } from "react-router-dom"
+import PropTypes from "prop-types"
 
 const StyledListItem = styled(ListItem)({
   backgroundColor: colors.blue,
@@ -16,11 +18,25 @@ const StyledListItemIcon = styled(ListItemIcon)({
   color: colors.white,
 })
 
-export default function DashboardListItem({ icon, label }) {
+const DashboardListItem = ({ icon, label, link }) => {
   return (
     <StyledListItem button>
       <StyledListItemIcon>{icon}</StyledListItemIcon>
-      <ListItemText primary={label} />
+      <Link to={link}>
+        <ListItemText primary={label} />
+      </Link>
     </StyledListItem>
   )
 }
+
+DashboardListItem.propTypes = {
+  icon: PropTypes.element,
+  label: PropTypes.string,
+  link: PropTypes.string,
+}
+
+DashboardListItem.defaultProps = {
+  link: "#",
+}
+
+export default DashboardListItem

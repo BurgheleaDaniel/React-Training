@@ -43,11 +43,31 @@ export default function LeftMenu() {
 
         <Divider />
         <List className={classes.sideDrawerMenu}>
-          <DashboardListItem icon={<SpeedIcon />} label="Dashboard" />
-          <DashboardListItem icon={<VolumeUpIcon />} label="New Campaign" />
-          <DashboardListItem icon={<TrackChangesIcon />} label="Integration" />
-          <DashboardListItem icon={<SubscriptionsIcon />} label="Subscribe" />
-          <DashboardListItem icon={<SettingsIcon />} label="Settings" />
+          <DashboardListItem
+            icon={<SpeedIcon />}
+            label="Dashboard"
+            link="/HomeworkDay8"
+          />
+          <DashboardListItem
+            icon={<VolumeUpIcon />}
+            label="New Campaign"
+            link="/HomeworkDay8/newCampaign"
+          />
+          <DashboardListItem
+            icon={<TrackChangesIcon />}
+            label="Integration"
+            link="/HomeworkDay8/integration"
+          />
+          <DashboardListItem
+            icon={<SubscriptionsIcon />}
+            label="Subscribe"
+            link="/HomeworkDay8/subscriptions"
+          />
+          <DashboardListItem
+            icon={<SettingsIcon />}
+            label="Settings"
+            link="/HomeworkDay8/settings"
+          />
         </List>
       </Drawer>
     </>

@@ -1,46 +1,43 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import TopBar from "./components/TopBar"
-import LeftMenu from "./components/LeftMenu"
+import TopBar from "../TopBar"
+import LeftMenu from "../LeftMenu"
 import { useForm } from "react-hook-form"
 import { Button, Grid, Typography } from "@material-ui/core"
-import { InputTextField } from "@webbeds/react/components/forms"
+import { FormActions, InputTextField } from "@webbeds/react/components/forms"
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
+import { getValidationSchema, useSaveCampaign } from "./sideEffects"
+import { useHistory } from "react-router-dom"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
     display: "flex",
   },
-  toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     paddingTop: "100px",
   },
   form: {
     width: "100%",
   },
-}))
+})
 
-export default function NewCampaign() {
+const NewCampaign = ({ campaigns, setCampaigns }) => {
   const classes = useStyles()
+  const history = useHistory()
   const defaultValues = {}
-  const validationSchema = yup.object().shape({
-    campaignName: yup
-      .string()
-      .trim()
-      .min(3, "Campaign Name must be at least 3 characters!")
-      .required("Campaign Name is required!"),
-  })
-  const { errors, register, handleSubmit, control, watch } = useForm({
+  const validationSchema = getValidationSchema()
+  const { errors, register, handleSubmit } = useForm({
     defaultValues,
     resolver: yupResolver(validationSchema),
   })
 
   const onSubmit = data => {
-    console.log(data)
+    console.log("aaaaaa")
+    useSaveCampaign(setCampaigns, campaigns, data)
+
+    history.push("/HomeworkDay8")
   }
 
   return (
@@ -66,7 +63,7 @@ export default function NewCampaign() {
               </Grid>
               <Grid item xs={12}>
                 <InputTextField
-                  name="campaignName"
+                  name="campaignType"
                   label="Campaign Type"
                   register={register}
                   errors={errors}
@@ -129,13 +126,15 @@ export default function NewCampaign() {
                 />
               </Grid>
 
-              <Button
-                onClick={handleSubmit(onSubmit)}
-                size="large"
-                color="primary"
-              >
-                Save Campaign
-              </Button>
+              <FormActions>
+                <Button
+                  onClick={handleSubmit(onSubmit)}
+                  size="large"
+                  color="primary"
+                >
+                  Save
+                </Button>
+              </FormActions>
             </form>
           </Grid>
         </div>
@@ -143,3 +142,5 @@ export default function NewCampaign() {
     </div>
   )
 }
+
+export default NewCampaign
