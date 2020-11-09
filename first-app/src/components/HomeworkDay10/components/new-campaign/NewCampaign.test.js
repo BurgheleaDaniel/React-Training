@@ -5,25 +5,28 @@ import NewCampaign from "./NewCampaign"
 import MutationObserver from "mutation-observer"
 import userEvent from "@testing-library/user-event"
 import { mockedSave, mockedValidationSchema } from "./NewCampaign.mocks"
-import { getValidationSchema, useSaveCampaign } from "./sideEffects"
+import { getValidationSchema, saveCampaign } from "./sideEffects"
+import { CampaignProvider } from "../../context"
 
 global.MutationObserver = MutationObserver
 
 jest.mock("./sideEffects", () => ({
   getValidationSchema: jest.fn(),
-  useSaveCampaign: jest.fn(),
+  saveCampaign: jest.fn(),
 }))
 
 describe("<NewCampaign>", () => {
   beforeAll(() => {
     getValidationSchema.mockReturnValue(mockedValidationSchema)
-    useSaveCampaign.mockImplementation(mockedSave)
+    saveCampaign.mockImplementation(mockedSave)
   })
 
   test("can render NewCampaign", async () => {
     render(
       <Router>
-        <NewCampaign campaigns={[]} setCampaigns={jest.fn()} />
+        <CampaignProvider>
+          <NewCampaign />
+        </CampaignProvider>
       </Router>
     )
 

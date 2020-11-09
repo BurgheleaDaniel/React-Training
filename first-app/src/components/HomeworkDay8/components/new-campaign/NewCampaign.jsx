@@ -34,7 +34,6 @@ const NewCampaign = ({ campaigns, setCampaigns }) => {
   })
 
   const onSubmit = data => {
-    console.log("aaaaaa")
     saveCampaign(setCampaigns, campaigns, data)
 
     history.push("/HomeworkDay8")
