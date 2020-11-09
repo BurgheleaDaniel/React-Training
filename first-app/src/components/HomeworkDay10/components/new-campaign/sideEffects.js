@@ -1,4 +1,3 @@
-import React from "react"
 import * as yup from "yup"
 
 export const getValidationSchema = () => {
@@ -23,21 +22,20 @@ export const getValidationSchema = () => {
   })
 }
 
-export const saveCampaign = (setCampaigns, campaigns, data) => {
+export const saveCampaign = (dispatch, data) => {
   const avatar = Math.random().toString(36)[3] + Math.random().toString(36)[3]
 
-  setCampaigns([
-    ...campaigns,
-    {
-      avatar: avatar,
-      name: data.campaignName,
-      type: data.campaignType,
-      status: data.campaignDate,
-      startDate: data.campaignStatus,
-      endDate: data.campaignEndDate,
-      visitorsNo: data.visitors,
-      entrantsNo: data.entrants,
-      conversionRate: data.conversionRate,
-    },
-  ])
+  const payload = {
+    avatar: avatar,
+    name: data.campaignName,
+    type: data.campaignType,
+    status: data.campaignDate,
+    startDate: data.campaignStatus,
+    endDate: data.campaignEndDate,
+    visitorsNo: data.visitors,
+    entrantsNo: data.entrants,
+    conversionRate: data.conversionRate,
+  }
+
+  dispatch({ type: "add", payload })
 }

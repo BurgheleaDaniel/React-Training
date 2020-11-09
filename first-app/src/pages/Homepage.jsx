@@ -33,6 +33,11 @@ function Homepage() {
             Homework Day 8
           </a>
         </ListItem>
+        <ListItem>
+          <a className="App-link" href="/homeworkDay10">
+            Homework Day 10
+          </a>
+        </ListItem>
         <User developerName="Daniel" color="red" image={logo} />
       </List>
     </div>

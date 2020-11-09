@@ -13,6 +13,13 @@ import Integration from "./components/HomeworkDay8/components/integration/Integr
 import Subscriptions from "./components/HomeworkDay8/components/subscriptions/Subscriptions"
 import Settings from "./components/HomeworkDay8/components/settings/Settings"
 
+import DashBoardHomework10 from "./components/HomeworkDay10/DashBoard"
+import NewCampaignHomework10 from "./components/HomeworkDay10/components/new-campaign/NewCampaign"
+import IntegrationHomework10 from "./components/HomeworkDay10/components/integration/Integration"
+import SubscriptionsHomework10 from "./components/HomeworkDay10/components/subscriptions/Subscriptions"
+import SettingsHomework10 from "./components/HomeworkDay10/components/settings/Settings"
+import { CampaignProvider } from "./components/HomeworkDay10/context"
+
 function App() {
   const [campaigns, setCampaigns] = useState([
     {
@@ -62,11 +69,38 @@ function App() {
         <Route path="/HomeworkDay8/integration" component={Integration} />
         <Route path="/HomeworkDay8/subscriptions" component={Subscriptions} />
         <Route path="/HomeworkDay8/settings" component={Settings} />
-        <Route path="/HomeworkDay8">
+        <Route path="/HomeworkDay8" exact>
           <DashBoard campaigns={campaigns} />
         </Route>
+
         <Route path="/Day6" component={Day6} />
-        <Route path="/" component={Homepage} />
+        <Route path="/" exact component={Homepage} />
+
+        <Switch>
+          <CampaignProvider>
+            <Route
+              path="/HomeworkDay10/newCampaign"
+              component={NewCampaignHomework10}
+            />
+            <Route
+              path="/HomeworkDay10/integration"
+              component={IntegrationHomework10}
+            />
+            <Route
+              path="/HomeworkDay10/subscriptions"
+              component={SubscriptionsHomework10}
+            />
+            <Route
+              path="/HomeworkDay10/settings"
+              component={SettingsHomework10}
+            />
+            <Route
+              path="/HomeworkDay10"
+              exact
+              component={DashBoardHomework10}
+            />
+          </CampaignProvider>
+        </Switch>
       </Switch>
     </Router>
   )

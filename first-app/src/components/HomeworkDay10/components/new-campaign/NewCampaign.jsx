@@ -9,6 +9,7 @@ import { FormActions, InputTextField } from "@webbeds/react/components/forms"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { getValidationSchema, saveCampaign } from "./sideEffects"
 import { useHistory } from "react-router-dom"
+import { useCampaignDispatch } from "../../context"
 
 const useStyles = makeStyles({
   root: {
@@ -23,7 +24,8 @@ const useStyles = makeStyles({
   },
 })
 
-const NewCampaign = ({ campaigns, setCampaigns }) => {
+const NewCampaign = () => {
+  const dispatch = useCampaignDispatch()
   const classes = useStyles()
   const history = useHistory()
   const defaultValues = {}
@@ -34,10 +36,9 @@ const NewCampaign = ({ campaigns, setCampaigns }) => {
   })
 
   const onSubmit = data => {
-    console.log("aaaaaa")
-    saveCampaign(setCampaigns, campaigns, data)
+    saveCampaign(dispatch, data)
 
-    history.push("/HomeworkDay8")
+    history.push("/HomeworkDay10")
   }
 
   return (

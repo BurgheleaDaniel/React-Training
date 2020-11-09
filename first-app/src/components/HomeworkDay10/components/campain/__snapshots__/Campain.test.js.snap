@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Campain /> should match snapshot 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+>
+  <div
+    className="MuiPaper-root makeStyles-rowWrapper-1 MuiPaper-elevation3 MuiPaper-rounded"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+    >
+      <div
+        className="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-2 MuiAvatar-colorDefault"
+      >
+        DB
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-11 makeStyles-campainName-3"
+      >
+        Promovare Bucovina
+      </div>
+      <div
+        className="MuiBox-root MuiBox-root-12 makeStyles-campainType-4"
+      >
+        Google ADS
+      </div>
+      <span
+        className="MuiTypography-root makeStyles-greyText-5 MuiTypography-caption MuiTypography-gutterBottom MuiTypography-displayBlock"
+      >
+        19/10/2020
+      </span>
+      <hr
+        className="MuiDivider-root"
+      />
+      <span
+        className="MuiTypography-root MuiTypography-caption MuiTypography-gutterBottom MuiTypography-displayBlock"
+      >
+        <span>
+          Ongoing
+           
+        </span>
+        <span
+          className="makeStyles-greyText-5"
+        >
+          End date 
+          19/10/2020
+        </span>
+      </span>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
+    >
+      <div
+        className="makeStyles-roundBox-6"
+      >
+        <p>
+          Visitors
+        </p>
+        <span
+          className="makeStyles-campainCounter-7"
+        >
+          345
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
+    >
+      <div
+        className="makeStyles-roundBox-6"
+      >
+        <p>
+          Entrants
+        </p>
+        <span
+          className="makeStyles-campainCounter-7"
+        >
+          198
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
+    >
+      <div
+        className="makeStyles-roundBox-6"
+      >
+        <p>
+          Conv. Rate
+        </p>
+        <span
+          className="makeStyles-campainCounter-7"
+        >
+          45.55
+          %
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-manageButton-8"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Manage Winners
+        </span>
+      </button>
+      <div
+        className="MuiBox-root MuiBox-root-13 makeStyles-actionIconsWrappwer-9"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root makeStyles-actionIcon-10"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
+          />
+        </svg>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root makeStyles-actionIcon-10"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
+          />
+        </svg>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root makeStyles-actionIcon-10"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
+          />
+        </svg>
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root makeStyles-actionIcon-10"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
